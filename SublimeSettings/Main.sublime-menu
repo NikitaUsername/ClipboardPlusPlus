@@ -1,0 +1,36 @@
+[
+    {
+        "caption": "Preferences",
+        "id": "preferences",
+        "children": [
+            {
+                "mnemonic": "P",
+                "caption": "Package Settings",
+                "id": "package-settings",
+                "children": [
+                    {
+                        "caption": "ClipboardPlusPlus",
+                        "children": [
+                            {
+                                "caption": "Copy",
+                                "command": "clipboard_copy"
+                            },
+                            
+                            {
+                                "caption": "Paste",
+                                "command": "clipboard_paste"
+                            },
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "/home/denis/.config/sublime-text-3/Packages/ClipboardPlusPlus/MenuSettings/Default.sublime-keymap"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
