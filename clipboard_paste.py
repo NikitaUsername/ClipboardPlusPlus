@@ -1,16 +1,22 @@
 import sublime, sublime_plugin
+import json
+
 
 
 class ClipboardPasteCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
-		content = self.get_characters_html()
-		self.view.show_popup(content, sublime.HTML, location=-1, max_height=640, on_navigate=self.on_choice_symbol)
+		content = self.get_popup_content()
+		self.view.show_popup(content, sublime.HTML, location=-1, max_height=640, on_navigate=self.on_choice_textbox)
 
-	def get_characters_html(self):
+	def get_popup_content(self):
 		resources = sublime.find_resources('popup-window.html')
 		content = sublime.load_resource(resources[0])
 		return content
 
-	def on_choice_symbol(self, symbol):
-		self.view.run_command("insert", {"characters": symbol})
+	def on_choice_textbox(self, symbol):
+		history_path = '/home/denis/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json'
+		with open(history_path, 'r') as f:
+		    data = json.loads(f.read())
+
+		self.view.run_command("insert", {"characters": data["clipboardHistory"][data["index"]]["content"]})
 		self.view.hide_popup()
