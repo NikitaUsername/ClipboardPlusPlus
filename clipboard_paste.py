@@ -18,5 +18,5 @@ class ClipboardPasteCommand(sublime_plugin.TextCommand):
 		with open(history_path, 'r') as f:
 		    data = json.loads(f.read())
 
-		self.view.run_command("insert", {"characters": data["clipboardHistory"][data["index"]]["content"]})
+		self.view.run_command("insert", {"characters": data["clipboardHistory"][int(symbol)]["content"]})
 		self.view.hide_popup()
