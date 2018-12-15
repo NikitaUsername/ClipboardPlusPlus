@@ -1,12 +1,12 @@
 import sublime, sublime_plugin
 import json
+import os
 
 
 class ClipboardCopyCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
-		history_path = '/home/denis/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json'
-		html_path = '/home/denis/.config/sublime-text-3/Packages/ClipboardPlusPlus/popup-window.html'
+		history_path = os.path.expanduser('~/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json')
+		html_path = os.path.expanduser('~/.config/sublime-text-3/Packages/ClipboardPlusPlus/popup-window.html')
 
 		self.view.run_command('copy')
 		data = self.get_data(history_path)

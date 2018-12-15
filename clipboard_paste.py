@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 import json
-
+import os
 
 
 class ClipboardPasteCommand(sublime_plugin.TextCommand):
@@ -14,7 +14,7 @@ class ClipboardPasteCommand(sublime_plugin.TextCommand):
 		return content
 
 	def on_choice_textbox(self, symbol):
-		history_path = '/home/denis/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json'
+		history_path = os.path.expanduser('~/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json')
 		with open(history_path, 'r') as f:
 		    data = json.loads(f.read())
 
