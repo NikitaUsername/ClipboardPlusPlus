@@ -1,0 +1,6 @@
+[
+    { "keys": [ "ctrl+сmd+b", "ctrl+сmd+v" ], "command": "clipboard_paste" },
+    { "keys": [ "ctrl+сmd+и", "ctrl+сmd+м" ], "command": "clipboard_paste" },
+    { "keys": [ "сmd+c"], "command": "clipboard_copy" },
+    { "keys": [ "сmd+с"], "command": "clipboard_copy" }
+]

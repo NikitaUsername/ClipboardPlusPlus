@@ -24,8 +24,24 @@
                                 "caption": "Key Bindings – Default",
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/ClipboardPlusPlus//Default.sublime-keymap",
+                                    "file": "${packages}/ClipboardPlusPlus//Default (Linux).sublime-keymap",
                                     "platform": "Linux"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/ClipboardPlusPlus//Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/ClipboardPlusPlus//Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
                                 }
                             }
                         ]

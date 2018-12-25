@@ -1,7 +1,7 @@
 import sublime, sublime_plugin
 import json
 import os
-
+from sys import platform
 
 class ClipboardPasteCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
@@ -14,7 +14,11 @@ class ClipboardPasteCommand(sublime_plugin.TextCommand):
 		return content
 
 	def on_choice_textbox(self, symbol):
-		history_path = os.path.expanduser('~/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json')
+		history_path = ""
+		if platform == "linux" or platform == "linux2" or platform == "darwin":
+		    history_path = os.path.expanduser('~/.config/sublime-text-3/Packages/ClipboardPlusPlus/hist.json')
+		else :
+		    history_path = os.path.expanduser('~\\AppData\\Roaming\\Sublime Text 3\\Packages\\ClipboardPlusPlus\\hist.json')
 		with open(history_path, 'r') as f:
 		    data = json.loads(f.read())
 
