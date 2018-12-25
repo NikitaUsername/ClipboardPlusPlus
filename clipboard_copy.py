@@ -50,7 +50,13 @@ class ClipboardCopyCommand(sublime_plugin.TextCommand):
 		short_text = ""
 
 		for i in data["clipboardHistory"][data["index"]]["content"][:13]:
-			if i is not "\n":
+			if i is "<":
+				short_text +="〈"
+				continue
+			elif i is ">":
+				short_text +="〉"
+				continue
+			elif i is not "\n":
 				short_text +=i
 			else:
 				short_text +="\t"
